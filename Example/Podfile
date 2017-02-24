@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MSAlert_Example' do
+  pod 'MSAlert', :path => '../'
+
+  target 'MSAlert_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
