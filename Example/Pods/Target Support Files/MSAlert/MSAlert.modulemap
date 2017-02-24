@@ -1,0 +1,6 @@
+framework module MSAlert {
+  umbrella header "MSAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}
