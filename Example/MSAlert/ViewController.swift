@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MSAlert
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func alert(_ sender: Any) {
+        
+        UIAlertController.showAlertIn(viewController: self,
+                                      title: "Alert",
+                                      message: "This is my alert",
+                                      cancelTitle: "Cancel",
+                                      destructiveTitle: "Destruct",
+                                      OtherTitles:["Button1"],
+                                      tappedAction:nil)
+    }
+    
+    @IBAction func action(_ sender: Any) {
+        
+        UIAlertController.showActionsheetIn(viewController: self
+            , title: "Action sheet",
+              message: "This is my action sheet",
+              cancelTitle: "Cancel",
+              destructiveTitle: "Delete",
+              OtherTitles: ["Action1"],
+              popOverView: sender,
+              permittedArrowDirections: .unknown,
+              tappedAction: nil)
+    }
+    
 }
 
