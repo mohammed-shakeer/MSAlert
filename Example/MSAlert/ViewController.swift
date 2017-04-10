@@ -10,36 +10,36 @@ import UIKit
 import MSAlert
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func alert(_ sender: Any) {
         
         UIAlertController.showAlertIn(viewController: self,
                                       title: "Alert",
                                       message: "This is my alert",
                                       cancelTitle: "Cancel",
-                                      destructiveTitle: "Destruct",
-                                      OtherTitles:["Button1"],
+                                      destructiveTitle: nil,
+                                      otherTitles:nil,
                                       tappedAction:nil)
     }
     
     @IBAction func action(_ sender: Any) {
         
         UIAlertController.showActionsheetIn(viewController: self
-            , title: "Action sheet",
+            , title: nil,
               message: "This is my action sheet",
               cancelTitle: "Cancel",
               destructiveTitle: "Delete",
-              OtherTitles: ["Action1"],
+              otherTitles: ["Action1"],
               popOverView: sender,
               permittedArrowDirections: .unknown,
               tappedAction: nil)
