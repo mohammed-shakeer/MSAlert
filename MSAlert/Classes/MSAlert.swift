@@ -19,7 +19,7 @@ extension UIAlertController{
                                   cancelTitle: String?,
                                   destructiveTitle: String?,
                                   otherTitles: [String]?,
-                                  tappedAction: ((UIAlertController, UIAlertAction, NSInteger) -> Void)?){
+                                  tappedAction: ((UIAlertController, UIAlertAction, NSInteger) -> Void)?) {
         
         showIn(viewController: viewController,
                title: title,
@@ -29,8 +29,8 @@ extension UIAlertController{
                destructiveTitle: destructiveTitle,
                otherTitles: otherTitles,
                popOverView: nil,
-               permittedArrowDirections: .unknown) { (alert, action, index) in
-        }
+               permittedArrowDirections: .unknown,
+               tappedAction: tappedAction)
     }
     
     open class func showActionsheetIn(viewController: UIViewController,
@@ -41,7 +41,7 @@ extension UIAlertController{
                                       otherTitles:[String]?,
                                       popOverView: Any,
                                       permittedArrowDirections: UIPopoverArrowDirection,
-                                      tappedAction: ((UIAlertController, UIAlertAction, NSInteger) -> Void)?){
+                                      tappedAction: ((UIAlertController, UIAlertAction, NSInteger) -> Void)?) {
         
         showIn(viewController: viewController,
                title: title,
@@ -51,8 +51,8 @@ extension UIAlertController{
                destructiveTitle: destructiveTitle,
                otherTitles: otherTitles,
                popOverView: popOverView,
-               permittedArrowDirections: .unknown) { (alert, action, index) in
-        }
+               permittedArrowDirections: .unknown,
+               tappedAction: tappedAction)
     }
     
     class func showIn(viewController: UIViewController,
@@ -64,7 +64,7 @@ extension UIAlertController{
                       otherTitles:[String]?,
                       popOverView: Any?,
                       permittedArrowDirections: UIPopoverArrowDirection,
-                      tappedAction: ((UIAlertController, UIAlertAction, NSInteger) -> Void)?){
+                      tappedAction: ((UIAlertController, UIAlertAction, NSInteger) -> Void)?) {
         
         let alertController = self.init(title: title ?? "", message: message, preferredStyle: preferredStyle)
         
